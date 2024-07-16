@@ -8,17 +8,13 @@
       "answer": [
         "I'm a stupid Chat bot.",
         "Chat bot that create by KaminariSora.",
-        "Are you suer that you want to know my name?"
+        "Are you sure that you want to know my name?"
       ],
       "correctAnswer": 2
     },
     {
       "question": "Hello",
       "answer": "Hey, there!"
-    },
-    {
-      "question": "What is your name",
-      "answer": "My name is KaminariSora. Nice to meet you."
     }
   ]
 }
