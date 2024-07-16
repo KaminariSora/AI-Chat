@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+
+# Python virtual environment
+venv/
+
+# Logs
+logs/
+*.log
+
+# Compiled files
+*.class
+*.pyc
+__pycache__/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE configuration files
+.vscode/
+.idea/
