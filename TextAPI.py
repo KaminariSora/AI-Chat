@@ -3,14 +3,11 @@ import speech_recognition as sr
 import pyttsx3
 from markdown import markdown
 
-# Set up your Google API key
 api_key = 'AIzaSyB5eH2PXMc-OkqejaWwRtJNGSa08KDdpdQ'
 genai.configure(api_key=api_key)
 
-# Initialize the model
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-# Function 1: Speech to Text
 def speech_to_text():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -26,7 +23,6 @@ def speech_to_text():
         print(f"Could not request results from Google Speech Recognition service; {e}")
     return None
 
-# Function 2: Chatbot LLM using Google Generative AI
 def chatbot_llm(input_text):
     print(f"User: {input_text}")
     try:
@@ -44,13 +40,11 @@ def chatbot_llm(input_text):
         print(f"Error generating response: {e}")
         return "Error generating response."
 
-# Function 3: Text to Speech
 def text_to_speech(text):
     engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
 
-# Main function to integrate all steps
 def main():
     i=0
     while True:
