@@ -48,14 +48,14 @@ def text_to_speech(text):
 def main():
     i=0
     while True:
-        # input_text = speech_to_text()
-        # if input_text:
-        #     response = chatbot_llm(input_text)
-        #     text_to_speech(response)
-        input_text = ["Hello", "How are you?", "How many days in 1 week?"]
-        for i in range(3):
-            response = chatbot_llm(input_text[i])
+        input_text = speech_to_text()
+        if input_text:
+            response = chatbot_llm(input_text)
             text_to_speech(response)
+        # input_text = ["Hello", "How are you?", "How many days in 1 week?"]
+        # for i in range(3):
+        #     response = chatbot_llm(input_text[i])
+        #     text_to_speech(response)
 
 if __name__ == "__main__":
     main()
