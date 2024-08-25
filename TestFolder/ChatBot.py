@@ -34,7 +34,7 @@ def text_to_speech(text: str):
     engine.runAndWait()
         
 def chat_bot():
-    knowledge_base: dict = load_knowledge_base('knowledgeBase.json')
+    knowledge_base: dict = load_knowledge_base('TestFolder/knowledgeBase.json')
 
     while True:
         user_input: str = input("You : ")
