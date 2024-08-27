@@ -1,51 +1,38 @@
-import re
+import nltk
+from nltk.corpus import words
 
-def calculate_count(sentence):
-    sentence = sentence.strip()  # Remove leading and trailing spaces
-    if not sentence:
-        return (0, 0, 0, 0, "")
+# Download the words corpus if not already done
+nltk.download('words')
 
-    word_count = 0
-    space_count = 0
-    char_count = 0
-    vowel_count = 0
-    vowel_list = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']
-    
-    # Initialize variables to build words from continuous characters
-    temp_word = ""
-    words = []
-    
-    for char in sentence:
-        if char.isalpha():  # Consider alphabetic characters
-            temp_word += char
-            char_count += 1
-            if char in vowel_list:
-                vowel_count += 1
+# Get a set of English words
+word_list = set(words.words())
+
+def segment_text(text):
+    segmented_text = ""
+    while text:
+        for i in range(len(text), 0, -1):
+            word_candidate = text[:i]
+            if word_candidate in word_list:
+                segmented_text += word_candidate + " "
+                text = text[i:]
+                break
         else:
-            if temp_word:
-                words.append(temp_word)
-                word_count += 1
-                temp_word = ""
-            if char == ' ':
-                space_count += 1
-    
-    if temp_word:
-        words.append(temp_word)
-        word_count += 1
-    
-    formatted_sentence = ' '.join(words)
-    
-    return (word_count, space_count, char_count, vowel_count, formatted_sentence)
+            segmented_text += text[0] + " "
+            text = text[1:]
+    return segmented_text.strip()
 
-# Input sentence
-sentence = input("Enter something : ")
+def chatbot():
+    print("bot: please write anything.")
+    
+    while True:
+        user_input = input("Input: ")
+        
+        if user_input.lower() in ["exit", "quit"]:
+            print("Chatbot: Goodbye!")
+            break
+        
+        segmented_text = segment_text(user_input)
+        print(f"bot: I think you said: {segmented_text}")
 
-# Calculate counts and formatted output
-word_count, space_count, char_count, vowel_count, formatted_sentence = calculate_count(sentence)
-
-# Print results
-print('\nOutput: ', formatted_sentence)
-print('Word count: ', word_count)
-print('Space count: ', space_count)
-print('Character count: ', char_count)
-print('Vowel count: ', vowel_count)
+if __name__ == "__main__":
+    chatbot()

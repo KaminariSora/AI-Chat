@@ -1,24 +1,14 @@
 {
-  "question": [
-    {
-      "question": [
-        "What is your name",
-        "What's your name"
-      ],
-      "answer": [
-        "I'm a stupid Chat bot.",
-        "Chat bot that create by KaminariSora.",
-        "Are you sure that you want to know my name?"
-      ],
-      "correctAnswer": 2
-    },
-    {
-      "question": "Hello",
-      "answer": "Hey, there!"
-    },
-    {
-      "question": "How are you",
-      "answer": "I'm fine"
-    }
+  "faqs": [
+      {
+          "label": ["ปรัชญาของภาควิชา", "ปรัชญา"],
+          "question": "ปรัชญาของภาควิชาวิศวกรรมคอมพิวเตอร์ มศว คืออะไร?",
+          "answer": "ปรัชญาคือ สร้างสรรค์ความรู้และนวัตกรรม ผลิตบัณฑิตเพื่อพัฒนาสังคมไทยอย่างยั่งยืน"
+      },
+      {
+          "label": ["นโยบายการคืนสินค้า", "คืนสินค้า"],
+          "question": "นโยบายการคืนสินค้าของบริษัทคืออะไร?",
+          "answer": "เรามีนโยบายคืนสินค้าในระยะเวลา 30 วันตามเงื่อนไขที่กำหนด"
+      }
   ]
 }
